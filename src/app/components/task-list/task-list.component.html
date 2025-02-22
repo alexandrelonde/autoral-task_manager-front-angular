@@ -1,1 +1,17 @@
-<p>task-list works!</p>
+<ul>
+  <li *ngFor="let task of tasks">
+
+    <span [class.complete]="task.isComplete">
+      {{task.title}}
+    </span>
+
+    <button (click)="toggleTaskCompletion(task)">
+      {{ task.isComplete ? 'Desfazer' : 'Concluir' }}
+    </button>
+
+    <button (click)="deleteTask(task.id)">
+      Excluir
+    </button>
+
+  </li>
+</ul>
